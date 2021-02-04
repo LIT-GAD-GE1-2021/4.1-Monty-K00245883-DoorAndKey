@@ -2,19 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * The LevelManager from the Week 6 Lecture
- */
 public class LevelManager : MonoBehaviour {
 
     public static LevelManager instance;
-
+    public KeyController keyControl;
+    public SwitchController switchControl;
+    public DoorController doorControl;
+    public bool key;
+    public bool doorOpen;
     private void Awake()
     {
-        // set the instance property/variable to this object
         instance = this;
+        key = false;
+        doorOpen = false;
     }
 
+    private void Update()
+    {
 
-    
+    }
+    public void OpeningDoor()
+    {
+        if(key == true)
+        {
+            doorOpen = true;
+            doorControl.OpenDoor();
+        }
+    }
+
 }

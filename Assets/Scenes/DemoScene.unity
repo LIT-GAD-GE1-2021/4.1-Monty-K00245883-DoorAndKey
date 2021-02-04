@@ -1288,6 +1288,9 @@ GameObject:
   - component: {fileID: 1534798244}
   - component: {fileID: 1534798243}
   - component: {fileID: 1534798242}
+  - component: {fileID: 1534798245}
+  - component: {fileID: 1534798246}
+  - component: {fileID: 1534798247}
   m_Layer: 8
   m_Name: Door
   m_TagString: Ground
@@ -1386,6 +1389,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1534798245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534798241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfa2f27f6d370f419769e674a46561b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorAnimator: {fileID: 1534798247}
+--- !u!50 &1534798246
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534798241}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!95 &1534798247
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534798241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5028f468c1c378429368f9df746c2d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1610541753 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1295566667443404, guid: 5d6d6e1224cb887498afa13f21b86e51, type: 3}
@@ -1403,6 +1459,7 @@ GameObject:
   - component: {fileID: 1613990216}
   - component: {fileID: 1613990215}
   - component: {fileID: 1613990214}
+  - component: {fileID: 1613990218}
   m_Layer: 9
   m_Name: Switch
   m_TagString: Untagged
@@ -1420,10 +1477,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.048062325, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1434,7 +1491,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.7783294, y: 1}
   m_EdgeRadius: 0
 --- !u!95 &1613990215
 Animator:
@@ -1492,8 +1549,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2100751745
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c0c3be49ea749f46bc6aefe9183ad82, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -1520,6 +1577,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613990218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613990213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce3d36e3775df40b81d202422da55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchOn: 0
+  switchEnabled: 0
+  switchAnimator: {fileID: 1613990215}
 --- !u!1 &1663297732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1603,7 @@ GameObject:
   - component: {fileID: 1663297735}
   - component: {fileID: 1663297734}
   - component: {fileID: 1663297733}
+  - component: {fileID: 1663297736}
   m_Layer: 9
   m_Name: Key
   m_TagString: Untagged
@@ -1548,7 +1621,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1591,8 +1664,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2100751745
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a78577e44f1bc72429b3b441b2d8a814, type: 3}
   m_Color: {r: 1, g: 0.86571324, b: 0, a: 1}
@@ -1619,6 +1692,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663297736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663297732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa91d40512e3d184295df718ff9b87e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1663297734}
 --- !u!850595691 &1843294221
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1735,5 +1821,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9082285964690263403, guid: 04c1d69ca4f2cb34ba3cbfa3364d6c19, type: 3}
+      propertyPath: keyControl
+      value: 
+      objectReference: {fileID: 1663297736}
+    - target: {fileID: 9082285964690263403, guid: 04c1d69ca4f2cb34ba3cbfa3364d6c19, type: 3}
+      propertyPath: switchControl
+      value: 
+      objectReference: {fileID: 1613990218}
+    - target: {fileID: 9082285964690263403, guid: 04c1d69ca4f2cb34ba3cbfa3364d6c19, type: 3}
+      propertyPath: doorSpeed
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082285964690263403, guid: 04c1d69ca4f2cb34ba3cbfa3364d6c19, type: 3}
+      propertyPath: doorControl
+      value: 
+      objectReference: {fileID: 1534798245}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04c1d69ca4f2cb34ba3cbfa3364d6c19, type: 3}
